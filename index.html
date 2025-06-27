@@ -5,138 +5,238 @@
   <title>DEKIMU SPACE ORGANIZATION</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
-    body {
-      background-image: url('DEKIMU.jpeg');
-      background-size: cover;
-      background-repeat: no-repeat;
-      background-attachment: fixed;
-      background-position: center center;
-      min-height: 100vh;
+    html, body {
       margin: 0;
       padding: 0;
+      min-height: 100vh;
+      width: 100vw;
+      overflow-x: hidden;
+    }
+    /* Flashy animated background */
+    body {
       position: relative;
+      min-height: 100vh;
+      width: 100vw;
+      /* Animated gradient background */
+      background: linear-gradient(120deg, #0f2027, #2c5364, #ff512f, #dd2476, #24c6dc, #5433ff, #20e2d7, #fcb045, #fd1d1d, #833ab4, #e96443, #904e95);
+      background-size: 300% 300%;
+      animation: animatedBg 18s ease-in-out infinite;
+      transition: background 0.5s;
     }
-    body::before {
-      content: "";
-      position: fixed;
-      top: 0; left: 0; right: 0; bottom: 0;
-      background: rgba(255,255,255,0.7);
-      z-index: 0;
-      pointer-events: none;
+    @keyframes animatedBg {
+      0% {background-position: 0% 50%;}
+      25% {background-position: 100% 50%;}
+      50% {background-position: 100% 100%;}
+      75% {background-position: 0% 100%;}
+      100% {background-position: 0% 50%;}
     }
-    .mission-logo {
-      position: fixed;
-      top: 20px;
-      right: 20px; /* Top-right corner */
-      left: auto;
-      width: 64px;
-      height: 64px;
-      z-index: 100;
-      border-radius: 12px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
-      background: #fff;
-      object-fit: cover;
-      border: 2px solid #e0e0e0;
-    }
+    /* Glassmorphism content box */
     .content-wrapper {
       max-width: 900px;
-      margin: 40px auto;
-      padding: 40px 20px;
-      background: rgba(255,255,255,0.9);
-      border-radius: 16px;
-      box-shadow: 0 4px 32px rgba(0,0,0,0.08);
+      margin: 60px auto 40px auto;
+      padding: 40px 24px;
+      background: rgba(30, 30, 60, 0.68);
+      border-radius: 20px;
+      box-shadow: 0 8px 40px 8px rgba(0,0,0,0.18), 0 1.5px 10px rgba(0,0,0,0.10);
       position: relative;
       z-index: 1;
+      backdrop-filter: blur(10px) brightness(1.15);
+      border: 2.5px solid rgba(255,255,255,0.14);
+      animation: fadeInUp 1.3s cubic-bezier(.19,1,.22,1);
+    }
+    @keyframes fadeInUp {
+      0% {opacity:0; transform: translateY(80px);}
+      80% {opacity:1;}
+      100% {transform: translateY(0);}
+    }
+
+    /* Flashy animated logo */
+    .mission-logo {
+      position: fixed;
+      top: 24px;
+      right: 30px;
+      width: 88px;
+      height: 88px;
+      z-index: 200;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.85);
+      border: 4px solid #fff;
+      box-shadow: 0 8px 30px rgba(44, 120, 220, 0.21), 0 1.5px 10px rgba(0,0,0,0.16);
+      object-fit: contain;
+      padding: 10px;
+      animation: logoPop 1.3s cubic-bezier(.19,1,.22,1);
+      transition: box-shadow 0.2s, transform 0.2s;
+    }
+    @keyframes logoPop {
+      0% {transform: scale(0.3) rotate(-15deg); opacity:0;}
+      60% {transform: scale(1.08) rotate(7deg);}
+      80% {transform: scale(0.97);}
+      100% {transform: scale(1) rotate(0deg); opacity:1;}
+    }
+    .mission-logo:hover {
+      transform: scale(1.1) rotate(3deg);
+      box-shadow: 0 14px 44px 0 #ff512f99, 0 1.5px 18px #20e2d799;
+    }
+
+    /* Animated gradient text */
+    .rainbow-text {
+      background: linear-gradient(90deg, #ff512f, #f09819, #43cea2, #185a9d, #fd1d1d, #833ab4, #fcb045, #20e2d7, #ff512f);
+      background-size: 2000% 2000%;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      text-fill-color: transparent;
+      animation: rainbowText 6s linear infinite alternate;
+      font-weight: bold;
+      text-shadow: 0 1.5px 10px rgba(255,255,255,0.08);
+      letter-spacing: 1.5px;
+      display: inline-block;
+    }
+    @keyframes rainbowText {
+      0% {background-position: 0% 50%;}
+      100% {background-position: 100% 50%;}
     }
     h1, h2, h3, p, li, a {
-      color: #222;
+      color: #fff;
+      text-align: center;
+      text-shadow: 0 2px 16px #14143a55, 0 1.5px 10px #0003;
+      font-family: 'Segoe UI', 'Montserrat', 'Arial', sans-serif;
+    }
+    h1, h2, h3, .rainbow-text {
       text-align: center;
     }
     h1 {
       margin-top: 0;
+      font-size: 2.4em;
       letter-spacing: 2px;
+    }
+    h2 {
+      font-size: 1.7em;
+      margin-bottom: 0.6em;
+      margin-top: 1.5em;
+    }
+    h3 {
+      font-size: 1.25em;
+      margin-top: 1.25em;
+      margin-bottom: 0.5em;
     }
     ul {
       text-align: left;
-      max-width: 600px;
+      max-width: 650px;
       margin: 0 auto 1.5em auto;
+      font-size: 1.13em;
+      line-height: 1.7;
+      padding-left: 0;
+      list-style: disc inside;
     }
     section {
-      margin-bottom: 2em;
+      margin-bottom: 2.5em;
     }
     a {
-      color: #2c44a7;
+      color: #fcb045;
       text-decoration: none;
+      font-weight: 600;
+      transition: color 0.2s;
+      filter: drop-shadow(0 0 4px #fff3);
+    }
+    a.rainbow-text {
+      color: inherit;
     }
     a:hover {
+      color: #20e2d7;
       text-decoration: underline;
     }
-    @media (max-width: 600px) {
+    /* Animate in sections as you scroll */
+    section {
+      opacity: 0;
+      transform: translateY(50px);
+      transition: opacity 0.8s, transform 0.8s;
+    }
+    section.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    /* Responsive adjustments */
+    @media (max-width: 750px) {
       .content-wrapper {
-        padding: 10px;
-      }
-      h1 {
-        font-size: 1.6em;
+        padding: 16px 4vw;
+        margin: 24px 0;
       }
       .mission-logo {
-        width: 44px;
-        height: 44px;
+        width: 62px;
+        height: 62px;
+        padding: 4px;
         top: 10px;
         right: 10px;
       }
+      h1 {font-size: 1.5em;}
+      h2 {font-size: 1.18em;}
+      h3 {font-size: 1em;}
+      ul {font-size:1em;}
     }
   </style>
 </head>
 <body>
-  <!-- Mission logo in top right corner -->
+  <!-- Animated, flashy mission logo in top right -->
   <img src="DEKIMU LOGO.jpg.jpg" alt="Mission Logo" class="mission-logo">
 
   <div class="content-wrapper">
     <header>
-      <h1>DEKIMU SPACE ORGANIZATION</h1>
-      <p>Welcome to the official website of DEKIMU Space Organization.</p>
+      <h1><span class="rainbow-text">DEKIMU SPACE ORGANIZATION</span></h1>
+      <p><span class="rainbow-text">Welcome to the official website of DEKIMU Space Organization.</span></p>
     </header>
     <main>
       <section>
-        <h2>About This Program</h2>
-        <p>
-          <strong>DEKIMU Space Organization</strong> (DSO) is a pioneering initiative dedicated to advancing humanity’s understanding and exploration of outer space. Founded with the vision of making space accessible, inspiring young minds, and contributing to scientific progress, DSO brings together researchers, students, and enthusiasts passionate about space science and technology.
-        </p>
-        <h3>Our Mission</h3>
+        <h2><span class="rainbow-text">About This Program</span></h2>
+        <p><span class="rainbow-text"><strong>DEKIMU Space Organization</strong> (DSO) is a pioneering initiative dedicated to advancing humanity’s understanding and exploration of outer space. Founded with the vision of making space accessible, inspiring young minds, and contributing to scientific progress, DSO brings together researchers, students, and enthusiasts passionate about space science and technology.</span></p>
+        <h3><span class="rainbow-text">Our Mission</span></h3>
         <ul>
-          <li>To promote and conduct research in astronomy, astrophysics, and space exploration technologies.</li>
-          <li>To foster STEM education by engaging students and young professionals in space-related projects and challenges.</li>
-          <li>To collaborate with national and international organizations for the exchange of knowledge and resources.</li>
-          <li>To inspire the public through outreach events, seminars, and creative science communication.</li>
+          <li><span class="rainbow-text">To promote and conduct research in astronomy, astrophysics, and space exploration technologies.</span></li>
+          <li><span class="rainbow-text">To foster STEM education by engaging students and young professionals in space-related projects and challenges.</span></li>
+          <li><span class="rainbow-text">To collaborate with national and international organizations for the exchange of knowledge and resources.</span></li>
+          <li><span class="rainbow-text">To inspire the public through outreach events, seminars, and creative science communication.</span></li>
         </ul>
-        <h3>Vision</h3>
-        <p>
-          Our vision is to ignite a passion for space in the next generation, contribute meaningfully to global space initiatives, and eventually participate in space missions and satellite launches.
-        </p>
-        <h3>Core Activities</h3>
+        <h3><span class="rainbow-text">Vision</span></h3>
+        <p><span class="rainbow-text">Our vision is to ignite a passion for space in the next generation, contribute meaningfully to global space initiatives, and eventually participate in space missions and satellite launches.</span></p>
+        <h3><span class="rainbow-text">Core Activities</span></h3>
         <ul>
-          <li><strong>Research & Development:</strong> Projects in space science, satellite technology, robotics, and data analysis.</li>
-          <li><strong>Workshops & Seminars:</strong> Regular educational sessions, webinars, and guest lectures from industry experts.</li>
-          <li><strong>Space Challenges:</strong> Participation in hackathons, competitions, and innovation challenges at national and international levels.</li>
-          <li><strong>Community Outreach:</strong> School visits, public talks, and science fairs to spread awareness and excitement about space.</li>
+          <li><span class="rainbow-text"><strong>Research & Development:</strong> Projects in space science, satellite technology, robotics, and data analysis.</span></li>
+          <li><span class="rainbow-text"><strong>Workshops & Seminars:</strong> Regular educational sessions, webinars, and guest lectures from industry experts.</span></li>
+          <li><span class="rainbow-text"><strong>Space Challenges:</strong> Participation in hackathons, competitions, and innovation challenges at national and international levels.</span></li>
+          <li><span class="rainbow-text"><strong>Community Outreach:</strong> School visits, public talks, and science fairs to spread awareness and excitement about space.</span></li>
         </ul>
-        <h3>Get Involved</h3>
-        <p>
-          We welcome students, educators, professionals, and hobbyists to join our organization. Collaborate on projects, attend our events, or become a mentor!
-        </p>
+        <h3><span class="rainbow-text">Get Involved</span></h3>
+        <p><span class="rainbow-text">We welcome students, educators, professionals, and hobbyists to join our organization. Collaborate on projects, attend our events, or become a mentor!</span></p>
       </section>
       <section>
-        <h2>Gallery</h2>
-        <p>(You can add images or project photos here!)</p>
+        <h2><span class="rainbow-text">Gallery</span></h2>
+        <p><span class="rainbow-text">(You can add images or project photos here!)</span></p>
       </section>
       <section>
-        <h2>Contact</h2>
+        <h2><span class="rainbow-text">Contact</span></h2>
         <p>
-          Email: <a href="mailto:info@dekimu.org">info@dekimu.org</a> <br>
-          GitHub: <a href="https://github.com/delah975/DEKIMU-SPACE-ORGANIZATION" target="_blank">DEKIMU-SPACE-ORGANIZATION</a>
+          <span class="rainbow-text">
+            Email: <a href="mailto:info@dekimu.org" class="rainbow-text">info@dekimu.org</a> <br>
+            GitHub: <a href="https://github.com/delah975/DEKIMU-SPACE-ORGANIZATION" target="_blank" class="rainbow-text">DEKIMU-SPACE-ORGANIZATION</a>
+          </span>
         </p>
       </section>
     </main>
   </div>
+  <script>
+    // Animate sections in as they scroll into view
+    function onScrollReveal() {
+      const reveals = document.querySelectorAll('section');
+      const windowHeight = window.innerHeight;
+      for (const el of reveals) {
+        const rect = el.getBoundingClientRect();
+        if (rect.top < windowHeight - 90) {
+          el.classList.add('visible');
+        }
+      }
+    }
+    window.addEventListener('scroll', onScrollReveal);
+    window.addEventListener('load', onScrollReveal);
+  </script>
 </body>
 </html>
