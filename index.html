@@ -6,60 +6,115 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
     body {
-      font-family: Arial, sans-serif;
-      margin: 40px;
-      background: #f2f2f2;
+      background-image: url('DEKIMU.jpeg');
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-position: center center;
+      min-height: 100vh;
+      margin: 0;
+      padding: 0;
+      position: relative;
+    }
+    /* Overlay for readability */
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(255,255,255,0.7);
+      z-index: 0;
+      pointer-events: none;
+    }
+    .content-wrapper {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 40px 20px;
+      background: rgba(255,255,255,0.9);
+      border-radius: 16px;
+      box-shadow: 0 4px 32px rgba(0,0,0,0.08);
+      position: relative;
+      z-index: 1;
+    }
+    h1, h2, h3, p, li, a {
       color: #222;
       text-align: center;
     }
-    header {
-      margin-bottom: 30px;
-    }
-    img {
-      max-width: 300px;
-      width: 100%;
-      height: auto;
-      border-radius: 10px;
-      margin-bottom: 20px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    }
     h1 {
-      font-size: 2.5em;
-      margin-bottom: 10px;
+      margin-top: 0;
       letter-spacing: 2px;
     }
-    p {
-      font-size: 1.2em;
-      margin-top: 0;
+    ul {
+      text-align: left;
+      max-width: 600px;
+      margin: 0 auto 1.5em auto;
+    }
+    section {
+      margin-bottom: 2em;
+    }
+    a {
+      color: #2c44a7;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    @media (max-width: 600px) {
+      .content-wrapper {
+        padding: 10px;
+      }
+      h1 {
+        font-size: 1.6em;
+      }
     }
   </style>
 </head>
 <body>
-  <header>
-    <img src="DEKIMU.jpeg" alt="DEKIMU logo">
-    <h1>DEKIMU SPACE ORGANIZATION</h1>
-    <p>Welcome to the official website of DEKIMU Space Organization.</p>
-  </header>
-  <main>
-    <section>
-      <h2>About Us</h2>
-      <p>
-        DEKIMU Space Organization is dedicated to the exploration, research, and advancement of space science and technology. 
-        Join us as we reach for the stars!
-      </p>
-    </section>
-    <section>
-      <h2>Gallery</h2>
-      <p>
-        (Add more images here as needed using &lt;img src="..."&gt; tags!)
-      </p>
-    </section>
-    <section>
-      <h2>Contact</h2>
-      <p>
-        Email: <a href="mailto:info@dekimu.org">info@dekimu.org</a>
-      </p>
-    </section>
-  </main>
+  <div class="content-wrapper">
+    <header>
+      <h1>DEKIMU SPACE ORGANIZATION</h1>
+      <p>Welcome to the official website of DEKIMU Space Organization.</p>
+    </header>
+    <main>
+      <section>
+        <h2>About This Program</h2>
+        <p>
+          <strong>DEKIMU Space Organization</strong> (DSO) is a pioneering initiative dedicated to advancing humanity’s understanding and exploration of outer space. Founded with the vision of making space accessible, inspiring young minds, and contributing to scientific progress, DSO brings together researchers, students, and enthusiasts passionate about space science and technology.
+        </p>
+        <h3>Our Mission</h3>
+        <ul>
+          <li>To promote and conduct research in astronomy, astrophysics, and space exploration technologies.</li>
+          <li>To foster STEM education by engaging students and young professionals in space-related projects and challenges.</li>
+          <li>To collaborate with national and international organizations for the exchange of knowledge and resources.</li>
+          <li>To inspire the public through outreach events, seminars, and creative science communication.</li>
+        </ul>
+        <h3>Vision</h3>
+        <p>
+          Our vision is to ignite a passion for space in the next generation, contribute meaningfully to global space initiatives, and eventually participate in space missions and satellite launches.
+        </p>
+        <h3>Core Activities</h3>
+        <ul>
+          <li><strong>Research & Development:</strong> Projects in space science, satellite technology, robotics, and data analysis.</li>
+          <li><strong>Workshops & Seminars:</strong> Regular educational sessions, webinars, and guest lectures from industry experts.</li>
+          <li><strong>Space Challenges:</strong> Participation in hackathons, competitions, and innovation challenges at national and international levels.</li>
+          <li><strong>Community Outreach:</strong> School visits, public talks, and science fairs to spread awareness and excitement about space.</li>
+        </ul>
+        <h3>Get Involved</h3>
+        <p>
+          We welcome students, educators, professionals, and hobbyists to join our organization. Collaborate on projects, attend our events, or become a mentor!
+        </p>
+      </section>
+      <section>
+        <h2>Gallery</h2>
+        <p>(You can add images or project photos here!)</p>
+      </section>
+      <section>
+        <h2>Contact</h2>
+        <p>
+          Email: <a href="mailto:info@dekimu.org">info@dekimu.org</a> <br>
+          GitHub: <a href="https://github.com/delah975/DEKIMU-SPACE-ORGANIZATION" target="_blank">DEKIMU-SPACE-ORGANIZATION</a>
+        </p>
+      </section>
+    </main>
+  </div>
 </body>
 </html>
