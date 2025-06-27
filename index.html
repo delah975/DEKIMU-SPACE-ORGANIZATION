@@ -16,7 +16,6 @@
       padding: 0;
       position: relative;
     }
-    /* Overlay for readability */
     body::before {
       content: "";
       position: fixed;
@@ -24,6 +23,20 @@
       background: rgba(255,255,255,0.7);
       z-index: 0;
       pointer-events: none;
+    }
+    .mission-logo {
+      position: fixed;
+      top: 20px;
+      right: 20px; /* Top-right corner */
+      left: auto;
+      width: 64px;
+      height: 64px;
+      z-index: 100;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+      background: #fff;
+      object-fit: cover;
+      border: 2px solid #e0e0e0;
     }
     .content-wrapper {
       max-width: 900px;
@@ -65,10 +78,19 @@
       h1 {
         font-size: 1.6em;
       }
+      .mission-logo {
+        width: 44px;
+        height: 44px;
+        top: 10px;
+        right: 10px;
+      }
     }
   </style>
 </head>
 <body>
+  <!-- Mission logo in top right corner -->
+  <img src="DEKIMU LOGO.jpg.jpg" alt="Mission Logo" class="mission-logo">
+
   <div class="content-wrapper">
     <header>
       <h1>DEKIMU SPACE ORGANIZATION</h1>
