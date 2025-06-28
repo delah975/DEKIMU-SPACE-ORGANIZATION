@@ -10,143 +10,127 @@
       padding: 0;
       min-height: 100vh;
       width: 100vw;
-      overflow-x: hidden;
       font-family: 'Segoe UI', Arial, sans-serif;
-      background: #0f2027;
-      color: #fff;
-    }
-    body {
       background: linear-gradient(120deg, #0f2027, #2c5364, #ff512f, #24c6dc, #5433ff, #20e2d7, #fcb045);
       background-size: cover;
+      color: #fff;
+      overflow-x: hidden;
     }
-    .content-wrapper {
+    .container {
       max-width: 900px;
-      margin: 64px auto 40px auto;
-      padding: 38px 20px;
-      background: rgba(30,30,60,0.68);
+      margin: 48px auto 40px auto;
+      padding: 32px 16px;
+      background: rgba(30,30,60,0.82);
       border-radius: 20px;
       box-shadow: 0 8px 40px 8px rgba(0,0,0,0.18), 0 1.5px 10px rgba(0,0,0,0.10);
-      position: relative;
-      z-index: 1;
-      backdrop-filter: blur(10px) brightness(1.12);
-      border: 2.5px solid rgba(255,255,255,0.14);
+      border: 2px solid rgba(255,255,255,0.12);
     }
-    .mission-logo {
-      position: fixed;
-      top: 22px;
-      right: 26px;
-      width: 78px;
-      height: 78px;
-      z-index: 200;
-      border-radius: 16px;
-      background: rgba(255,255,255,0.85);
-      border: 3px solid #fff;
-      box-shadow: 0 8px 30px rgba(44,120,220,0.17), 0 1.5px 10px rgba(0,0,0,0.16);
-      object-fit: contain;
-      padding: 8px;
-    }
-    .hero {
+    h1 {
       text-align: center;
-      padding: 120px 16px 80px 16px;
-      position: relative;
-      z-index: 1;
+      margin-bottom: 10px;
+      font-size: 2.5rem;
+      letter-spacing: 1.5px;
     }
-    .logo {
-      width: 120px;
-      margin-bottom: 20px;
-      display: block;
-      margin-left: auto;
-      margin-right: auto;
-    }
-    .hero h1 {
-      font-size: 3rem;
-      margin: 0 0 16px 0;
-      font-weight: bold;
-      letter-spacing: 2px;
-      text-shadow: 0 4px 20px #0006;
-    }
-    .hero p {
-      font-size: 1.25rem;
-      margin-bottom: 28px;
-    }
-    .btn {
-      background: #fff;
-      color: #2563eb;
-      padding: 12px 32px;
-      border-radius: 8px;
-      font-weight: 600;
-      font-size: 1rem;
-      border: none;
-      cursor: pointer;
-      box-shadow: 0 2px 8px #2563eb55;
-      text-decoration: none;
-      display: inline-block;
-      margin-top: 20px;
-    }
-    .section {
-      background: rgba(10, 38, 95, 0.8);
-      margin: 40px auto;
-      padding: 48px 16px;
-      max-width: 900px;
-      border-radius: 20px;
-      box-shadow: 0 0 30px #0002;
-      position: relative;
-      z-index: 1;
-    }
-    .section h2 {
-      font-size: 2rem;
-      margin-bottom: 24px;
+    h2 {
       color: #60a5fa;
+      margin-top: 36px;
+      margin-bottom: 16px;
       letter-spacing: 1px;
     }
-    .pillars {
+    .pillars-list {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 24px;
+      gap: 18px;
+      margin-bottom: 18px;
     }
     .pillar-card {
       background: #2563eb22;
       border: 1px solid #3b82f6;
       border-radius: 14px;
-      padding: 24px;
-      box-shadow: 0 2px 12px #1e40af33;
+      padding: 20px 16px;
+      color: #fff;
+      box-shadow: 0 2px 10px #1e40af22;
+      font-size: 1.07rem;
+      min-height: 90px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .people-matter {
+      background: #1e293b;
+      border-radius: 14px;
+      padding: 18px 14px;
+      margin: 34px 0 12px 0;
+      font-size: 1.08rem;
+      font-weight: 500;
+      color: #fbbf24;
+      border-left: 4px solid #60a5fa;
+    }
+    .cta {
+      display: block;
+      background: #fff;
+      color: #2563eb;
+      text-align: center;
+      margin: 32px auto 0 auto;
+      padding: 16px 28px;
+      border-radius: 8px;
+      font-weight: 700;
+      text-decoration: none;
+      font-size: 1.15rem;
+      max-width: 340px;
+      box-shadow: 0 2px 8px #2563eb33;
+      border: none;
+      cursor: pointer;
+    }
+    .hashtag {
+      color: #bae6fd;
+      font-size: 1.05rem;
+      letter-spacing: 1.2px;
+      margin: 8px 2px 0 0;
+      display: inline-block;
     }
     @media (max-width: 600px) {
-      .hero {
-        padding: 60px 8px 40px 8px;
-      }
-      .content-wrapper, .section {
-        padding: 20px 6px;
-      }
+      .container { padding: 12px 3px; }
+      h1 { font-size: 1.5rem; }
+      .pillars-list { grid-template-columns: 1fr; }
+      .cta { font-size: 1rem; }
     }
   </style>
 </head>
 <body>
-  <img class="mission-logo" src="logo.png" alt="Mission Logo">
-  <div class="content-wrapper">
-    <section class="hero">
-      <img src="logo.png" alt="DEKIMU Logo" class="logo">
-      <h1>DEKIMU SPACE ORGANIZATION</h1>
-      <p>Welcome to the DEKIMU Space Organization! We are dedicated to space exploration, science, and innovation.</p>
-      <a href="#" class="btn">Learn More</a>
-    </section>
-    <section class="section">
-      <h2>Our Pillars</h2>
-      <div class="pillars">
-        <div class="pillar-card">
-          <h3>Exploration</h3>
-          <p>Pushing the boundaries of human knowledge through space exploration missions.</p>
-        </div>
-        <div class="pillar-card">
-          <h3>Innovation</h3>
-          <p>Developing new technologies and solutions for a better future in space and on Earth.</p>
-        </div>
-        <div class="pillar-card">
-          <h3>Collaboration</h3>
-          <p>Working together with global partners to achieve common goals in space science.</p>
-        </div>
-      </div>
-    </section>
+  <div class="container">
+    <h1>DEKIMU SPACE ORGANIZATION</h1>
+    <h2>VISION</h2>
+    <div>A hub for holistic & exceptional leadership</div>
+    <h2>MISSION</h2>
+    <div>Redefining leadership through transformation</div>
+    <h2>Our Pillars</h2>
+    <div class="pillars-list">
+      <div class="pillar-card">1️⃣ Public Speaking</div>
+      <div class="pillar-card">2️⃣ Leadership Excellence</div>
+      <div class="pillar-card">3️⃣ Mental Health</div>
+      <div class="pillar-card">4️⃣ Academic Excellence</div>
+    </div>
+    <div class="people-matter">
+      <b>PEOPLE MATTER</b><br>
+      At DEKIMU Space Program, we don’t just talk about change - we train it.<br>
+      Through public speaking, academic excellence, mental wellness, and visionary leadership, we’re raising a new standard.<br>
+      This is where leaders rise.
+    </div>
+    <div>
+      Be part of a movement that brings change to a generation. Don’t miss out! 💪<br>
+      Let's grow, lead, and impact together ❣📌📌🔥🔥
+    </div>
+    <a href="#" class="cta">Join the Movement</a>
+    <div style="margin-top:22px;">
+      <span class="hashtag">#DekimuSpaceProgram</span>
+      <span class="hashtag">#LeadWithExcellence</span>
+      <span class="hashtag">#TheFutureSpeaks</span>
+      <span class="hashtag">#TrainTheChange</span>
+      <span class="hashtag">#DEKIMU</span>
+      <span class="hashtag">#Leadership</span>
+      <span class="hashtag">#Purpose</span>
+    </div>
   </div>
 </body>
 </html>
