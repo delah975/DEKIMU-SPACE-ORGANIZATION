@@ -124,6 +124,13 @@
       gap: 16px;
       margin-top: 16px;
     }
+    .gallery figure {
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background: none;
+    }
     .gallery img {
       width: 100%;
       border-radius: 12px;
@@ -147,6 +154,17 @@
     .gallery img:hover {
       transform: scale(1.04) rotate(-1deg);
       box-shadow: 0 6px 20px #60a5fa99;
+    }
+    .gallery figcaption {
+      color: #bae6fd;
+      background: rgba(30,40,70,0.85);
+      border-radius: 8px;
+      padding: 4px 9px;
+      margin-top: 7px;
+      font-size: 1.01rem;
+      text-align: center;
+      width: 90%;
+      max-width: 320px;
     }
     .aspirations-list {
       margin-top: 18px;
@@ -285,7 +303,6 @@
         <a href="#" onclick="showSection('aspirations',this);return false;">Aspirations</a>
         <a href="#" onclick="showSection('join',this);return false;">Join Us</a>
         <a href="#" onclick="showSection('secretary',this);return false;">Secretary's Desk</a>
-        <a href="#" onclick="showSection('meet-secretary',this);return false;">Meet the Secretary General</a>
         <a href="#" onclick="showSection('media',this);return false;">Media In-Charge</a>
       </div>
     </nav>
@@ -319,9 +336,58 @@
       <section id="gallery" class="section" style="display:none">
         <h2>Gallery</h2>
         <div class="gallery">
-          <img src="DEKIMU LOGO.jpg.jpg" alt="DEKIMU Logo" style="--i:0">
-          <img src="d backround.jpg.jpg" alt="Background Example" style="--i:1">
-          <img src="DEKIMU photos.jpg" alt="DEKIMU Photos" style="--i:2">
+          <figure>
+            <img src="P 1.jpg" alt="DEKIMU Gallery Photo 1" style="--i:1">
+            <figcaption>Photo 1</figcaption>
+          </figure>
+          <figure>
+            <img src="P 2.jpg" alt="DEKIMU Gallery Photo 2" style="--i:2">
+            <figcaption>Photo 2</figcaption>
+          </figure>
+          <figure>
+            <img src="P 3.jpg" alt="DEKIMU Gallery Photo 3" style="--i:3">
+            <figcaption>Photo 3</figcaption>
+          </figure>
+          <figure>
+            <img src="P 4.jpg" alt="DEKIMU Gallery Photo 4" style="--i:4">
+            <figcaption>Photo 4</figcaption>
+          </figure>
+          <figure>
+            <img src="P 5.jpg" alt="DEKIMU Gallery Photo 5" style="--i:5">
+            <figcaption>Photo 5</figcaption>
+          </figure>
+          <figure>
+            <img src="P 6.jpg" alt="DEKIMU Gallery Photo 6" style="--i:6">
+            <figcaption>Photo 6</figcaption>
+          </figure>
+          <figure>
+            <img src="P 7.jpg" alt="DEKIMU Gallery Photo 7" style="--i:7">
+            <figcaption>Photo 7</figcaption>
+          </figure>
+          <figure>
+            <img src="P 8.jpg" alt="DEKIMU Gallery Photo 8" style="--i:8">
+            <figcaption>Photo 8</figcaption>
+          </figure>
+          <figure>
+            <img src="P 9.jpg" alt="DEKIMU Gallery Photo 9" style="--i:9">
+            <figcaption>Photo 9</figcaption>
+          </figure>
+          <figure>
+            <img src="P 10.jpg" alt="DEKIMU Gallery Photo 10" style="--i:10">
+            <figcaption>Photo 10</figcaption>
+          </figure>
+          <figure>
+            <img src="P 11.jpg" alt="DEKIMU Gallery Photo 11" style="--i:11">
+            <figcaption>Photo 11</figcaption>
+          </figure>
+          <figure>
+            <img src="P 12.jpg" alt="DEKIMU Gallery Photo 12" style="--i:12">
+            <figcaption>Photo 12</figcaption>
+          </figure>
+          <figure>
+            <img src="Screenshot 2025-07-01 105407.png" alt="Secretary General Screenshot" style="--i:13">
+            <figcaption>Secretary General</figcaption>
+          </figure>
         </div>
       </section>
       <section id="aspirations" class="section" style="display:none">
@@ -376,28 +442,19 @@
           <strong>For inquiries:</strong> 0706 822 796 / 0759 329 945
         </p>
       </section>
-      <!-- Meet the Secretary General Section (NEW) -->
-      <section id="meet-secretary" class="section" style="display:none">
-        <h2>Meet the Secretary General</h2>
-        <div style="margin-bottom: 22px;">
-          <video width="360" controls style="border-radius:12px;box-shadow:0 2px 10px #1e40af77;">
-            <source src="secretary-general.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-          </video>
-        </div>
-        <div style="margin-bottom: 18px;">
-          <img src="Screenshot 2025-07-01 105407.png" alt="Secretary General Screenshot" style="width:340px;box-shadow:0 2px 14px #60a5fa99;">
-        </div>
-        <p>
-          Watch the Secretary General's address and view a special highlight!<br>
-          This is a window into the vision and impact of our leadership.
-        </p>
-      </section>
       <!-- Media In-Charge Section -->
       <section id="media" class="section" style="display:none">
         <h2>Media In-Charge</h2>
         <p>
           As the Media In-Charge of the DEKIMU SPACE
+        </p>
+      </section>
+    </main>
+  </div>
+</body>
+</html>
+    
+    
         
     
     
