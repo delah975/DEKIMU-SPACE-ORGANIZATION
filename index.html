@@ -118,7 +118,6 @@
       color: #fbbf24;
       border-left: 4px solid #60a5fa;
     }
-    /* Gallery Animations */
     .gallery {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(180px,1fr));
@@ -158,8 +157,6 @@
       font-size: 1.07rem;
       line-height: 1.5;
     }
-
-    /* Section transition animation */
     .section {
       opacity: 0;
       transform: translateY(16px);
@@ -171,7 +168,6 @@
       opacity: 1;
       transform: translateY(0);
     }
-    /* CTA Button Animation */
     .cta {
       display: block;
       background: #fff;
@@ -290,6 +286,7 @@
         <a href="#" onclick="showSection('aspirations',this);return false;">Aspirations</a>
         <a href="#" onclick="showSection('join',this);return false;">Join Us</a>
         <a href="#" onclick="showSection('secretary',this);return false;">Secretary's Desk</a>
+        <a href="#" onclick="showSection('meet-secretary',this);return false;">Meet the Secretary General</a>
         <a href="#" onclick="showSection('media',this);return false;">Media In-Charge</a>
       </div>
     </nav>
@@ -380,6 +377,23 @@
           <strong>For inquiries:</strong> 0706 822 796 / 0759 329 945
         </p>
       </section>
+      <!-- Meet the Secretary General Section (NEW) -->
+      <section id="meet-secretary" class="section" style="display:none">
+        <h2>Meet the Secretary General</h2>
+        <div style="margin-bottom: 22px;">
+          <video width="360" controls style="border-radius:12px;box-shadow:0 2px 10px #1e40af77;">
+            <source src="secretary-general.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+        <div style="margin-bottom: 18px;">
+          <img src="Screenshot 2025-07-01 105407.png" alt="Secretary General Screenshot" style="width:340px;box-shadow:0 2px 14px #60a5fa99;">
+        </div>
+        <p>
+          Watch the Secretary General's address and view a special highlight!<br>
+          This is a window into the vision and impact of our leadership.
+        </p>
+      </section>
       <!-- Media In-Charge Section -->
       <section id="media" class="section" style="display:none">
         <h2>Media In-Charge</h2>
@@ -402,4 +416,5 @@
   </div>
 </body>
 </html>
+    
     
