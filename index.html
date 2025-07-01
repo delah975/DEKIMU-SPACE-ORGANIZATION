@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+   <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -51,7 +51,6 @@
       box-shadow: 0 8px 40px 0 rgba(44,120,220,0.18), 0 1.5px 10px rgba(0,0,0,0.12);
       padding: 10px;
       display: block;
-      /* Animation classes below */
       animation: logoPulse 2.5s infinite cubic-bezier(.62,.07,.47,.96), logoFloat 7s infinite alternate cubic-bezier(.62,.07,.47,.96);
       transition: transform 0.2s;
       will-change: transform;
@@ -255,6 +254,14 @@
       opacity: 0;
       animation: directorFadeInZoom 1.2s cubic-bezier(.22,1.2,.38,.98) 0.15s forwards;
     }
+    .director-fullsize {
+      width: 100%;
+      max-width: 700px;
+      display: block;
+      margin: 0 auto 18px auto;
+      border-radius: 16px;
+      box-shadow: 0 6px 32px #1e293b88, 0 1.5px 10px rgba(0,0,0,0.12);
+    }
     @media (max-width: 900px) {
       .playbook-container {
         flex-direction: column;
@@ -294,6 +301,9 @@
       .gallery {
         grid-template-columns: 1fr 1fr;
       }
+      .director-fullsize {
+        max-width: 98vw;
+      }
     }
     @media (max-width: 600px) {
       .main-content h1 { font-size: 1.25rem; }
@@ -301,6 +311,7 @@
       .pillars-list { grid-template-columns: 1fr; }
       .gallery { grid-template-columns: 1fr; }
       .cta { font-size: 0.98rem; }
+      .director-fullsize { max-width: 100vw; }
     }
   </style>
   <script>
@@ -343,11 +354,24 @@
       <section id="vision" class="section">
         <h1>DEKIMU SPACE ORGANIZATION</h1>
         <h2>VISION</h2>
-        <div>A hub for holistic & exceptional leadership</div>
+        <div>
+          A hub for holistic & exceptional leadership.<br><br>
+          At DEKIMU SPACE PROGRAM, our vision is to nurture a new generation of leaders who embody integrity, innovation, and empathy. 
+          We aspire to be a transformative force in society by creating an environment where individuals are empowered to realize their fullest potential.<br><br>
+          We are dedicated to shaping future change-makers through comprehensive training in leadership, public speaking, mental wellness, and academic excellence. 
+          By fostering a culture of excellence, collaboration, and service, we aim to inspire our members to lead with purpose and make a meaningful impact in every sphere of life.<br><br>
+          Our vision is not just to develop skills, but to ignite a passion for lifelong learning, self-discovery, and positive change. 
+          Together, we are building a legacy of leaders who will transform communities, champion progress, and leave a lasting mark on the world.
+        </div>
       </section>
       <section id="mission" class="section" style="display:none">
         <h2>MISSION</h2>
-        <div>Redefining leadership through transformation</div>
+        <div>
+          Redefining leadership through transformation.<br><br>
+          Our mission at DEKIMU SPACE PROGRAM is to empower individuals with the skills, mindset, and values necessary for impactful leadership in today’s ever-changing world.<br><br>
+          We are committed to delivering comprehensive training in public speaking, leadership excellence, mental health awareness, and academic achievement. By fostering an environment of continuous learning, mentorship, and support, we strive to inspire our members to become agents of positive change within their communities and beyond.<br><br>
+          Through collaboration, innovation, and a focus on holistic development, we aim to cultivate leaders who act with integrity, embrace diversity, and champion progress for a better tomorrow.
+        </div>
       </section>
       <section id="pillars" class="section" style="display:none">
         <h2>Our Pillars</h2>
@@ -465,25 +489,21 @@
       <section id="media" class="section" style="display:none">
         <h2>Media In-Charge</h2>
         <p>
-          As the Media In-Charge of the DEKIMU SPACE
+          As the Media in-charge of the DEKIMU SPACE program, we are responsible for shaping and amplifying the voice of our initiative. Our role involves managing communication strategies, promoting our vision and mission across digital and traditional platforms, and ensuring that our message reaches and resonates with diverse audiences.
+        </p>
+        <p>
+          We work to showcase the transformative work of our pillars—public speaking, leadership, academic excellence, and mental health—while fostering a positive and consistent image of our program through content creation.
         </p>
       </section>
-      <!-- Director Section -->
       <section id="director" class="section" style="display:none">
         <h2 class="director-animated" style="animation-delay:0.1s;">Director</h2>
-        <img
-          src="Director DSP.png"
-          alt="Director Photo"
-          class="director-animated"
-          style="
-            max-width:220px;
-            border-radius:16px;
-            box-shadow:0 6px 32px #1e293b88, 0 1.5px 10px rgba(0,0,0,0.12);
-            display:block;
-            margin-bottom:18px;
-            margin-top:8px;
-            animation-delay:0.2s;
-          ">
+        <a href="Director DSP.png" target="_blank">
+          <img
+            src="Director DSP.png"
+            alt="Director Photo"
+            class="director-fullsize director-animated"
+            style="animation-delay:0.2s;">
+        </a>
         <div
           class="director-animated"
           style="
@@ -523,7 +543,6 @@
   </div>
 </body>
 </html>
-    
     
         
     
