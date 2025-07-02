@@ -1,4 +1,4 @@
-   <!DOCTYPE html>
+       <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -44,7 +44,7 @@
       width: 160px;
       height: 160px;
       border-radius: 18px;
-      margin-bottom: 32px;
+      margin-bottom: 8px;
       object-fit: contain;
       background: #fff;
       border: 2.5px solid #fff;
@@ -69,6 +69,21 @@
     @keyframes logoFloat {
       0% { transform: translateY(0px);}
       100% { transform: translateY(-8px);}
+    }
+    .org-name-gradient {
+      margin-top: 10px;
+      font-size: 1.07rem;
+      font-weight: bold;
+      letter-spacing: 1px;
+      text-align: center;
+      background: linear-gradient(90deg, #60a5fa 0%, #e0f2fe 70%, #fff 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      text-fill-color: transparent;
+      text-shadow: 0 2px 8px #2563eb33;
+      display: block;
+      margin-bottom: 16px;
     }
     .nav {
       width: 100%;
@@ -244,7 +259,6 @@
       margin: 6px 2px 0 0;
       display: inline-block;
     }
-    /* Director section animation */
     @keyframes directorFadeInZoom {
       0% { opacity:0; transform: scale(0.7) translateY(40px);}
       60% { opacity:1; transform: scale(1.15) translateY(-8px);}
@@ -262,6 +276,7 @@
       border-radius: 16px;
       box-shadow: 0 6px 32px #1e293b88, 0 1.5px 10px rgba(0,0,0,0.12);
     }
+    /* --- RESPONSIVE --- */
     @media (max-width: 900px) {
       .playbook-container {
         flex-direction: column;
@@ -313,6 +328,71 @@
       .cta { font-size: 0.98rem; }
       .director-fullsize { max-width: 100vw; }
     }
+    /* === LOGIN OVERLAY AND ARROW === */
+    #loginScreen {
+      position: fixed;
+      z-index: 9999;
+      top: 0; left: 0;
+      width: 100vw; height: 100vh;
+      background: rgba(15,23,42,0.97);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    #loginForm {
+      background: #1e293b;
+      padding: 24px 32px;
+      border-radius: 12px;
+      box-shadow: 0 0 18px #2563eb22;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-width: 280px;
+      margin-bottom: 22px;
+    }
+    #loginForm input {
+      margin: 8px 0;
+      width: 230px;
+      padding: 8px;
+      border-radius: 6px;
+      border: 1px solid #bae6fd;
+      background: #0f172a;
+      color: #e0f2fe;
+      font-size: 1rem;
+    }
+    #loginForm input:focus {
+      outline: 2px solid #60a5fa;
+      background: #1e293b;
+    }
+    #loginForm button {
+      margin-top: 8px;
+    }
+    .arrow-bounce {
+      display: inline-block;
+      font-size: 2.7rem;
+      color: #60a5fa;
+      animation: bounce 1.2s infinite;
+    }
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0);}
+      50% { transform: translateY(15px);}
+    }
+    /* --- TEAM CARDS --- */
+    #teamContainer > div {
+      min-width: 220px;
+      max-width: 260px;
+      margin-bottom: 18px;
+      background:#1e293b;
+      border-radius:12px;
+      padding:18px;
+      text-align:center;
+    }
+    #teamContainer img {
+      width:100px;
+      border-radius:50%;
+      margin-bottom:8px;
+    }
   </style>
   <script>
     function showSection(id, link) {
@@ -329,220 +409,305 @@
     window.onload = function() {
       showSection('vision', document.querySelector('.nav a'));
     };
+    // LOGIN logic & Team JSON (added below)
   </script>
 </head>
 <body>
-  <div class="playbook-container">
-    <nav class="sidebar">
-      <a href="#" onclick="showSection('vision',this);return false;">
-        <img class="logo-animated" src="DEKIMU LOGO.jpg.jpg" alt="DEKIMU Logo">
-      </a>
-      <div class="nav">
-        <a href="#" onclick="showSection('vision',this);return false;">Vision</a>
-        <a href="#" onclick="showSection('mission',this);return false;">Mission</a>
-        <a href="#" onclick="showSection('pillars',this);return false;">Our Pillars</a>
-        <a href="#" onclick="showSection('people',this);return false;">People Matter</a>
-        <a href="#" onclick="showSection('gallery',this);return false;">Gallery</a>
-        <a href="#" onclick="showSection('aspirations',this);return false;">Aspirations</a>
-        <a href="#" onclick="showSection('join',this);return false;">Join Us</a>
-        <a href="#" onclick="showSection('secretary',this);return false;">Secretary's Desk</a>
-        <a href="#" onclick="showSection('media',this);return false;">Media In-Charge</a>
-        <a href="#" onclick="showSection('director',this);return false;">Director</a>
-      </div>
-    </nav>
-    <main class="main-content">
-      <section id="vision" class="section">
-        <h1>DEKIMU SPACE ORGANIZATION</h1>
-        <h2>VISION</h2>
-        <div>
-          A hub for holistic & exceptional leadership.<br><br>
-          At DEKIMU SPACE PROGRAM, our vision is to nurture a new generation of leaders who embody integrity, innovation, and empathy. 
-          We aspire to be a transformative force in society by creating an environment where individuals are empowered to realize their fullest potential.<br><br>
-          We are dedicated to shaping future change-makers through comprehensive training in leadership, public speaking, mental wellness, and academic excellence. 
-          By fostering a culture of excellence, collaboration, and service, we aim to inspire our members to lead with purpose and make a meaningful impact in every sphere of life.<br><br>
-          Our vision is not just to develop skills, but to ignite a passion for lifelong learning, self-discovery, and positive change. 
-          Together, we are building a legacy of leaders who will transform communities, champion progress, and leave a lasting mark on the world.
-        </div>
-      </section>
-      <section id="mission" class="section" style="display:none">
-        <h2>MISSION</h2>
-        <div>
-          Redefining leadership through transformation.<br><br>
-          Our mission at DEKIMU SPACE PROGRAM is to empower individuals with the skills, mindset, and values necessary for impactful leadership in today’s ever-changing world.<br><br>
-          We are committed to delivering comprehensive training in public speaking, leadership excellence, mental health awareness, and academic achievement. By fostering an environment of continuous learning, mentorship, and support, we strive to inspire our members to become agents of positive change within their communities and beyond.<br><br>
-          Through collaboration, innovation, and a focus on holistic development, we aim to cultivate leaders who act with integrity, embrace diversity, and champion progress for a better tomorrow.
-        </div>
-      </section>
-      <section id="pillars" class="section" style="display:none">
-        <h2>Our Pillars</h2>
-        <div class="pillars-list">
-          <div class="pillar-card">1️⃣ Public Speaking</div>
-          <div class="pillar-card">2️⃣ Leadership Excellence</div>
-          <div class="pillar-card">3️⃣ Mental Health</div>
-          <div class="pillar-card">4️⃣ Academic Excellence</div>
-        </div>
-      </section>
-      <section id="people" class="section" style="display:none">
-        <div class="people-matter">
-          <b>PEOPLE MATTER</b><br>
-          At DEKIMU Space Program, we don’t just talk about change - we train it.<br>
-          Through public speaking, academic excellence, mental wellness, and visionary leadership, we’re raising a new standard.<br>
-          This is where leaders rise.
-        </div>
-      </section>
-      <section id="gallery" class="section" style="display:none">
-        <h2>Gallery</h2>
-        <div class="gallery">
-          <figure>
-            <a href="P 1.jpg" target="_blank"><img src="P 1.jpg" alt="Chairperson" style="--i:1"></a>
-            <figcaption>“Leadership is the capacity to translate vision into reality.”</figcaption>
-          </figure>
-          <figure>
-            <a href="P 3.jpg" target="_blank"><img src="P 3.jpg" alt="DEKIMU Gallery Photo 3" style="--i:3"></a>
-            <figcaption>“Education is the most powerful weapon you can use to change the world.”</figcaption>
-          </figure>
-          <figure>
-            <a href="P 4.jpg" target="_blank"><img src="P 4.jpg" alt="DEKIMU Gallery Photo 4" style="--i:4"></a>
-            <figcaption>“Every great journey begins with a single step.”</figcaption>
-          </figure>
-          <figure>
-            <a href="P 5.jpg" target="_blank"><img src="P 5.jpg" alt="DEKIMU Gallery Photo 5" style="--i:5"></a>
-            <figcaption>“Together we achieve more. Teamwork makes the dream work.”</figcaption>
-          </figure>
-          <figure>
-            <a href="P 6.jpg" target="_blank"><img src="P 6.jpg" alt="DEKIMU Gallery Photo 6" style="--i:6"></a>
-            <figcaption>“Success is not the key to happiness. Happiness is the key to success.”</figcaption>
-          </figure>
-          <figure>
-            <a href="P 7.jpg" target="_blank"><img src="P 7.jpg" alt="DEKIMU Gallery Photo 7" style="--i:7"></a>
-            <figcaption>“Your only limit is your mind.”</figcaption>
-          </figure>
-          <figure>
-            <a href="P 8.jpg" target="_blank"><img src="P 8.jpg" alt="DEKIMU Gallery Photo 8" style="--i:8"></a>
-            <figcaption>“Great leaders don’t set out to be leaders. They set out to make a difference.”</figcaption>
-          </figure>
-          <figure>
-            <a href="P 9.jpg" target="_blank"><img src="P 9.jpg" alt="DEKIMU Gallery Photo 9" style="--i:9"></a>
-            <figcaption>“The beautiful thing about learning is nobody can take it away from you.”</figcaption>
-          </figure>
-          <figure>
-            <a href="P 10.jpg" target="_blank"><img src="P 10.jpg" alt="DEKIMU Gallery Photo 10" style="--i:10"></a>
-            <figcaption>“Dream big, work hard, stay focused.”</figcaption>
-          </figure>
-          <figure>
-            <a href="P 11.jpg" target="_blank"><img src="P 11.jpg" alt="DEKIMU Gallery Photo 11" style="--i:11"></a>
-            <figcaption>“Knowledge is power, but enthusiasm pulls the switch.”</figcaption>
-          </figure>
-        </div>
-      </section>
-      <section id="aspirations" class="section" style="display:none">
-        <h2>Aspirations</h2>
-        <ul class="aspirations-list">
-          <li>To nurture and empower future leaders who will transform society.</li>
-          <li>To promote holistic excellence in academics, leadership, and well-being.</li>
-          <li>To create a supportive community for growth, impact, and innovation.</li>
-          <li>To lead a generational movement of positive change and vision-driven action.</li>
-        </ul>
-      </section>
-      <section id="join" class="section" style="display:none">
-        <div>
-          Be part of a movement that brings change to a generation. Don’t miss out! 💪<br>
-          Let's grow, lead, and impact together ❣📌📌🔥🔥
-        </div>
-        <a href="#" class="cta">Join the Movement</a>
-        <div class="hashtags">
-          <span class="hashtag">#DekimuSpaceProgram</span>
-          <span class="hashtag">#LeadWithExcellence</span>
-          <span class="hashtag">#TheFutureSpeaks</span>
-          <span class="hashtag">#TrainTheChange</span>
-          <span class="hashtag">#DEKIMU</span>
-          <span class="hashtag">#Leadership</span>
-          <span class="hashtag">#Purpose</span>
-        </div>
-      </section>
-      <section id="secretary" class="section" style="display:none">
-        <h2>Organising Secretary’s Desk</h2>
-        <p>
-          At DEKIMU, we are committed to developing purpose-driven leaders through holistic training.<br>
-          We believe in raising a new breed of leaders — bold, balanced, and purpose-driven.
-        </p>
-        <h3>Our Vision</h3>
-        <p>To be a hub for holistic and exceptional leadership training.</p>
-        <h3>Our Mission</h3>
-        <p>To redefine leadership through transformation.</p>
-        <h3>Our Pillars</h3>
-        <ul>
-          <li>Public Speaking</li>
-          <li>Leadership Excellence</li>
-          <li>Mental Health & Wellness</li>
-          <li>Academic Excellence</li>
-        </ul>
-        <p>
-          <strong>Join Us</strong><br>
-          Be the change. Lead your generation.<br>
-          ✨ Grow with us at DEKIMU SPACE PROGRAM!
-        </p>
-        <p>
-          <strong>For inquiries:</strong> 0706 822 796 / 0759 329 945
-        </p>
-      </section>
-      <section id="media" class="section" style="display:none">
-        <h2>Media In-Charge</h2>
-        <p>
-          As the Media in-charge of the DEKIMU SPACE program, we are responsible for shaping and amplifying the voice of our initiative. Our role involves managing communication strategies, promoting our vision and mission across digital and traditional platforms, and ensuring that our message reaches and resonates with diverse audiences.
-        </p>
-        <p>
-          We work to showcase the transformative work of our pillars—public speaking, leadership, academic excellence, and mental health—while fostering a positive and consistent image of our program through content creation.
-        </p>
-      </section>
-      <section id="director" class="section" style="display:none">
-        <h2 class="director-animated" style="animation-delay:0.1s;">Director</h2>
-        <a href="Director DSP.png" target="_blank">
-          <img
-            src="Director DSP.png"
-            alt="Director Photo"
-            class="director-fullsize director-animated"
-            style="animation-delay:0.2s;">
-        </a>
-        <div
-          class="director-animated"
-          style="
-            animation-delay:0.35s;
-            font-size:1.08rem;
-            line-height:1.7;
-            background:rgba(30,60,100,0.16);
-            border-radius:14px;
-            padding:18px 18px 12px 18px;
-            box-shadow:0 2px 12px #0002;
-            margin-top:10px;
-            color:#e0f2fe;
-          ">
-          <p>
-            Leadership production gives credibility to the leader.<br>
-            Leadership brings clarity and reality to the vision.
-          </p>
-          <p>
-            At <strong>DEKIMU SPACE PROGRAM</strong> we train leadership in all its ramifications; corporate and institutional training.
-          </p>
-          <p>
-            We are defined by excellence as well as exceptionalism in training on:
-            <ol>
-              <li>Excellence in leadership</li>
-              <li>Mental health</li>
-              <li>Academic excellence</li>
-              <li>Public speaking therapy</li>
-            </ol>
-          </p>
-          <p>
-            We want to redefine leadership in all the spheres of life.<br>
-            Join us in this generational moment. Change and be the change we want in our world.
-          </p>
-        </div>
-      </section>
-    </main>
+  <!-- LOGIN OVERLAY -->
+  <div id="loginScreen">
+    <a href="#" style="display:flex;flex-direction:column;align-items:center;text-decoration:none;margin-bottom:14px;">
+      <img class="logo-animated" src="DEKIMU LOGO.jpg.jpg" alt="DEKIMU Logo" style="width:110px;height:110px;">
+      <span class="org-name-gradient">DEKIMU SPACE ORGANIZATION</span>
+    </a>
+    <form id="loginForm">
+      <h2 style="color:#60a5fa;">Login</h2>
+      <input type="text" id="username" name="username" placeholder="Username or Email" required>
+      <input type="password" id="password" name="password" placeholder="Password" required>
+      <button type="submit" class="cta">Login</button>
+      <div id="loginMessage" style="margin-top:10px;color:#fbbf24;"></div>
+    </form>
+    <div style="margin-top:32px;">
+      <span class="arrow-bounce">&#8595;</span>
+    </div>
   </div>
+
+  <!-- MAIN CONTENT LOCKED UNTIL LOGIN -->
+  <div id="mainContent" style="display:none;">
+    <div class="playbook-container">
+      <nav class="sidebar">
+        <a href="#" onclick="showSection('vision',this);return false;">
+          <img class="logo-animated" src="DEKIMU LOGO.jpg.jpg" alt="DEKIMU Logo">
+          <span class="org-name-gradient">DEKIMU SPACE ORGANIZATION</span>
+        </a>
+        <div class="nav">
+          <a href="#" onclick="showSection('vision',this);return false;">Vision</a>
+          <a href="#" onclick="showSection('mission',this);return false;">Mission</a>
+          <a href="#" onclick="showSection('pillars',this);return false;">Our Pillars</a>
+          <a href="#" onclick="showSection('people',this);return false;">People Matter</a>
+          <a href="#" onclick="showSection('gallery',this);return false;">Gallery</a>
+          <a href="#" onclick="showSection('aspirations',this);return false;">Aspirations</a>
+          <a href="#" onclick="showSection('join',this);return false;">Join Us</a>
+          <a href="#" onclick="showSection('secretary',this);return false;">Secretary's Desk</a>
+          <a href="#" onclick="showSection('media',this);return false;">Media In-Charge</a>
+          <a href="#" onclick="showSection('director',this);return false;">Director</a>
+          <a href="#" onclick="showSection('team',this);return false;">Our Team</a>
+        </div>
+      </nav>
+      <main class="main-content">
+        <!-- --- YOUR ORIGINAL SECTIONS (unchanged, as in your last code) --- -->
+        <!-- Vision -->
+        <section id="vision" class="section">
+          <h1>DEKIMU SPACE ORGANIZATION</h1>
+          <h2>VISION</h2>
+          <div>
+            A hub for holistic & exceptional leadership.<br><br>
+            At DEKIMU SPACE PROGRAM, our vision is to nurture a new generation of leaders who embody integrity, innovation, and empathy. 
+            We aspire to be a transformative force in society by creating an environment where individuals are empowered to realize their fullest potential.<br><br>
+            We are dedicated to shaping future change-makers through comprehensive training in leadership, public speaking, mental wellness, and academic excellence. 
+            By fostering a culture of excellence, collaboration, and service, we aim to inspire our members to lead with purpose and make a meaningful impact in every sphere of life.<br><br>
+            Our vision is not just to develop skills, but to ignite a passion for lifelong learning, self-discovery, and positive change. 
+            Together, we are building a legacy of leaders who will transform communities, champion progress, and leave a lasting mark on the world.
+          </div>
+        </section>
+        <!-- Mission -->
+        <section id="mission" class="section" style="display:none">
+          <h2>MISSION</h2>
+          <div>
+            Redefining leadership through transformation.<br><br>
+            Our mission at DEKIMU SPACE PROGRAM is to empower individuals with the skills, mindset, and values necessary for impactful leadership in today’s ever-changing world.<br><br>
+            We are committed to delivering comprehensive training in public speaking, leadership excellence, mental health awareness, and academic achievement. By fostering an environment of continuous learning, mentorship, and support, we strive to inspire our members to become agents of positive change within their communities and beyond.<br><br>
+            Through collaboration, innovation, and a focus on holistic development, we aim to cultivate leaders who act with integrity, embrace diversity, and champion progress for a better tomorrow.
+          </div>
+        </section>
+        <!-- Pillars -->
+        <section id="pillars" class="section" style="display:none">
+          <h2>Our Pillars</h2>
+          <div class="pillars-list">
+            <div class="pillar-card">1️⃣ Public Speaking</div>
+            <div class="pillar-card">2️⃣ Leadership Excellence</div>
+            <div class="pillar-card">3️⃣ Mental Health</div>
+            <div class="pillar-card">4️⃣ Academic Excellence</div>
+          </div>
+        </section>
+        <!-- People Matter -->
+        <section id="people" class="section" style="display:none">
+          <div class="people-matter">
+            <b>PEOPLE MATTER</b><br>
+            At DEKIMU Space Program, we don’t just talk about change - we train it.<br>
+            Through public speaking, academic excellence, mental wellness, and visionary leadership, we’re raising a new standard.<br>
+            This is where leaders rise.
+          </div>
+        </section>
+        <!-- Gallery -->
+        <section id="gallery" class="section" style="display:none">
+          <h2>Gallery</h2>
+          <div class="gallery">
+            <figure>
+              <a href="P 1.jpg" target="_blank"><img src="P 1.jpg" alt="Chairperson" style="--i:1"></a>
+              <figcaption>“Leadership is the capacity to translate vision into reality.”</figcaption>
+            </figure>
+            <figure>
+              <a href="P 3.jpg" target="_blank"><img src="P 3.jpg" alt="DEKIMU Gallery Photo 3" style="--i:3"></a>
+              <figcaption>“Education is the most powerful weapon you can use to change the world.”</figcaption>
+            </figure>
+            <figure>
+              <a href="P 4.jpg" target="_blank"><img src="P 4.jpg" alt="DEKIMU Gallery Photo 4" style="--i:4"></a>
+              <figcaption>“Every great journey begins with a single step.”</figcaption>
+            </figure>
+            <figure>
+              <a href="P 5.jpg" target="_blank"><img src="P 5.jpg" alt="DEKIMU Gallery Photo 5" style="--i:5"></a>
+              <figcaption>“Together we achieve more. Teamwork makes the dream work.”</figcaption>
+            </figure>
+            <figure>
+              <a href="P 6.jpg" target="_blank"><img src="P 6.jpg" alt="DEKIMU Gallery Photo 6" style="--i:6"></a>
+              <figcaption>“Success is not the key to happiness. Happiness is the key to success.”</figcaption>
+            </figure>
+            <figure>
+              <a href="P 7.jpg" target="_blank"><img src="P 7.jpg" alt="DEKIMU Gallery Photo 7" style="--i:7"></a>
+              <figcaption>“Your only limit is your mind.”</figcaption>
+            </figure>
+            <figure>
+              <a href="P 8.jpg" target="_blank"><img src="P 8.jpg" alt="DEKIMU Gallery Photo 8" style="--i:8"></a>
+              <figcaption>“Great leaders don’t set out to be leaders. They set out to make a difference.”</figcaption>
+            </figure>
+            <figure>
+              <a href="P 9.jpg" target="_blank"><img src="P 9.jpg" alt="DEKIMU Gallery Photo 9" style="--i:9"></a>
+              <figcaption>“The beautiful thing about learning is nobody can take it away from you.”</figcaption>
+            </figure>
+            <figure>
+              <a href="P 10.jpg" target="_blank"><img src="P 10.jpg" alt="DEKIMU Gallery Photo 10" style="--i:10"></a>
+              <figcaption>“Dream big, work hard, stay focused.”</figcaption>
+            </figure>
+            <figure>
+              <a href="P 11.jpg" target="_blank"><img src="P 11.jpg" alt="DEKIMU Gallery Photo 11" style="--i:11"></a>
+              <figcaption>“Knowledge is power, but enthusiasm pulls the switch.”</figcaption>
+            </figure>
+          </div>
+        </section>
+        <!-- Aspirations -->
+        <section id="aspirations" class="section" style="display:none">
+          <h2>Aspirations</h2>
+          <ul class="aspirations-list">
+            <li>To nurture and empower future leaders who will transform society.</li>
+            <li>To promote holistic excellence in academics, leadership, and well-being.</li>
+            <li>To create a supportive community for growth, impact, and innovation.</li>
+            <li>To lead a generational movement of positive change and vision-driven action.</li>
+          </ul>
+        </section>
+        <!-- Join Us -->
+        <section id="join" class="section" style="display:none">
+          <div>
+            Be part of a movement that brings change to a generation. Don’t miss out! 💪<br>
+            Let's grow, lead, and impact together ❣📌📌🔥🔥
+          </div>
+          <a href="#" class="cta">Join the Movement</a>
+          <div class="hashtags">
+            <span class="hashtag">#DekimuSpaceProgram</span>
+            <span class="hashtag">#LeadWithExcellence</span>
+            <span class="hashtag">#TheFutureSpeaks</span>
+            <span class="hashtag">#TrainTheChange</span>
+            <span class="hashtag">#DEKIMU</span>
+            <span class="hashtag">#Leadership</span>
+            <span class="hashtag">#Purpose</span>
+          </div>
+        </section>
+        <!-- Secretary -->
+        <section id="secretary" class="section" style="display:none">
+          <h2>Organising Secretary’s Desk</h2>
+          <p>
+            At DEKIMU, we are committed to developing purpose-driven leaders through holistic training.<br>
+            We believe in raising a new breed of leaders — bold, balanced, and purpose-driven.
+          </p>
+          <h3>Our Vision</h3>
+          <p>To be a hub for holistic and exceptional leadership training.</p>
+          <h3>Our Mission</h3>
+          <p>To redefine leadership through transformation.</p>
+          <h3>Our Pillars</h3>
+          <ul>
+            <li>Public Speaking</li>
+            <li>Leadership Excellence</li>
+            <li>Mental Health & Wellness</li>
+            <li>Academic Excellence</li>
+          </ul>
+          <p>
+            <strong>Join Us</strong><br>
+            Be the change. Lead your generation.<br>
+            ✨ Grow with us at DEKIMU SPACE PROGRAM!
+          </p>
+          <p>
+            <strong>For inquiries:</strong> 0706 822 796 / 0759 329 945
+          </p>
+        </section>
+        <!-- Media In-Charge -->
+        <section id="media" class="section" style="display:none">
+          <h2>Media In-Charge</h2>
+          <p>
+            As the Media in-charge of the DEKIMU SPACE program, we are responsible for shaping and amplifying the voice of our initiative. Our role involves managing communication strategies, promoting our vision and mission across digital and traditional platforms, and ensuring that our message reaches and resonates with diverse audiences.
+          </p>
+          <p>
+            We work to showcase the transformative work of our pillars—public speaking, leadership, academic excellence, and mental health—while fostering a positive and consistent image of our program through content creation.
+          </p>
+        </section>
+        <!-- Director -->
+        <section id="director" class="section" style="display:none">
+          <h2 class="director-animated" style="animation-delay:0.1s;">Director</h2>
+          <a href="Director DSP.png" target="_blank">
+            <img
+              src="Director DSP.png"
+              alt="Director Photo"
+              class="director-fullsize director-animated"
+              style="animation-delay:0.2s;">
+          </a>
+          <div
+            class="director-animated"
+            style="
+              animation-delay:0.35s;
+              font-size:1.08rem;
+              line-height:1.7;
+              background:rgba(30,60,100,0.16);
+              border-radius:14px;
+              padding:18px 18px 12px 18px;
+              box-shadow:0 2px 12px #0002;
+              margin-top:10px;
+              color:#e0f2fe;
+            ">
+            <p>
+              Leadership production gives credibility to the leader.<br>
+              Leadership brings clarity and reality to the vision.
+            </p>
+            <p>
+              At <strong>DEKIMU SPACE PROGRAM</strong> we train leadership in all its ramifications; corporate and institutional training.
+            </p>
+            <p>
+              We are defined by excellence as well as exceptionalism in training on:
+              <ol>
+                <li>Excellence in leadership</li>
+                <li>Mental health</li>
+                <li>Academic excellence</li>
+                <li>Public speaking therapy</li>
+              </ol>
+            </p>
+            <p>
+              We want to redefine leadership in all the spheres of life.<br>
+              Join us in this generational moment. Change and be the change we want in our world.
+            </p>
+          </div>
+        </section>
+        <!-- OUR TEAM (dynamic from JSON) -->
+        <section id="team" class="section" style="display:none">
+          <h2>Meet Our Leadership</h2>
+          <div id="teamContainer" style="display:flex;flex-wrap:wrap;gap:24px;"></div>
+        </section>
+        <!-- --- END OF MAIN CONTENT --- -->
+      </main>
+    </div>
+  </div>
+  <script>
+    // LOGIN logic & Team JSON
+    document.addEventListener("DOMContentLoaded", function() {
+      // Login functionality
+      var loginForm = document.getElementById('loginForm');
+      var loginScreen = document.getElementById('loginScreen');
+      var mainContent = document.getElementById('mainContent');
+      if(loginForm) {
+        loginForm.onsubmit = function(e) {
+          e.preventDefault();
+          var username = document.getElementById('username').value;
+          var password = document.getElementById('password').value;
+          var msg = document.getElementById('loginMessage');
+          if(username === "admin" && password === "password") {
+            msg.style.color = "#22c55e";
+            msg.textContent = "Login successful! Redirecting...";
+            setTimeout(function(){
+              loginScreen.style.display = "none";
+              mainContent.style.display = "block";
+            }, 800);
+          } else {
+            msg.style.color = "#f87171";
+            msg.textContent = "Invalid credentials. Try 'admin' / 'password'.";
+          }
+        };
+      }
+      // TEAM JSON: Load leadership dynamically
+      fetch('team.json')
+        .then(response => response.json())
+        .then(data => {
+          const teamDiv = document.getElementById('teamContainer');
+          if(teamDiv) {
+            teamDiv.innerHTML = data.map(member => `
+              <div>
+                <img src="${member.image}" alt="${member.role} - ${member.name}">
+                <h3 style="color:#60a5fa;">${member.name}</h3>
+                <p style="color:#bae6fd;">${member.role}</p>
+                <p style="color:#e0f2fe;font-size:0.98rem;">${member.bio}</p>
+              </div>
+            `).join('');
+          }
+        }).catch(()=>{});
+    });
+  </script>
 </body>
-</html>
+</html>                   
     
         
     
