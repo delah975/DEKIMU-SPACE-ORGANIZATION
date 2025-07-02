@@ -1,0 +1,14 @@
+[
+  {
+    "name": "John Doe",
+    "role": "Director",
+    "image": "Director DSP.png",
+    "bio": "Leading with vision and passion for youth empowerment."
+  },
+  {
+    "name": "Jane Smith",
+    "role": "Organizing Secretary",
+    "image": "secretary.jpg",
+    "bio": "Ensuring smooth operations and communication at DEKIMU."
+  }
+]
