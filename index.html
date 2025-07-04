@@ -1,4 +1,4 @@
-       <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -454,7 +454,7 @@
         </div>
       </nav>
       <main class="main-content">
-        <!-- --- YOUR ORIGINAL SECTIONS (unchanged, as in your last code) --- -->
+        <!-- Sections as in your original file (unchanged for brevity) -->
         <!-- Vision -->
         <section id="vision" class="section">
           <h1>DEKIMU SPACE ORGANIZATION</h1>
@@ -665,17 +665,17 @@
   <script>
     // LOGIN logic & Team JSON
     document.addEventListener("DOMContentLoaded", function() {
-      // Login functionality
+      // Login functionality -- accepts any non-empty username/email and password
       var loginForm = document.getElementById('loginForm');
       var loginScreen = document.getElementById('loginScreen');
       var mainContent = document.getElementById('mainContent');
       if(loginForm) {
         loginForm.onsubmit = function(e) {
           e.preventDefault();
-          var username = document.getElementById('username').value;
-          var password = document.getElementById('password').value;
+          var username = document.getElementById('username').value.trim();
+          var password = document.getElementById('password').value.trim();
           var msg = document.getElementById('loginMessage');
-          if(username === "admin" && password === "password") {
+          if(username && password) {
             msg.style.color = "#22c55e";
             msg.textContent = "Login successful! Redirecting...";
             setTimeout(function(){
@@ -684,7 +684,7 @@
             }, 800);
           } else {
             msg.style.color = "#f87171";
-            msg.textContent = "Invalid credentials. Try 'admin' / 'password'.";
+            msg.textContent = "Please enter both username/email and password.";
           }
         };
       }
@@ -707,7 +707,7 @@
     });
   </script>
 </body>
-</html>                   
+</html>
     
         
     
