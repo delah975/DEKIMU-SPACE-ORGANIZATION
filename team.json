@@ -2,20 +2,43 @@
   {
     "name": "Dennis Kimathi",
     "role": "Chairperson",
-    "bio": "Visionary leader committed to transformation.",
-    "image": "P 2.jpg"
+    "bio": "Visionary leader committed to transformation. Dennis guides the DEKIMU Space Organisation in nurturing holistic and exceptional leadership among members, inspiring innovation and positive change.",
+    "image": "P 2.jpg",
+    "email": "dennis.kimathi@dekimu.org",
+    "skills": [
+      "Leadership Excellence",
+      "Public Speaking",
+      "Mentorship",
+      "Strategic Planning"
+    ],
+    "fact": "Passionate about empowering future leaders and building a transformative community."
   },
   {
     "name": "Hibaq Noor",
     "role": "Vice Chairperson",
-    "bio": "Empowering the next generation of change-makers.",
-    "image": "VC.jpg"
+    "bio": "Empowering the next generation of change-makers. Hibaq drives holistic growth, mental health empowerment, and academic mastery for all members.",
+    "image": "VC.jpg",
+    "email": "hibaqnoor28@gmail.com",
+    "skills": [
+      "Mental Wellness",
+      "Academic Excellence",
+      "Community Empowerment",
+      "Leadership"
+    ],
+    "fact": "Believes in shaping strong minds, sharp voices, and bold leaders."
   },
   {
     "name": "Tithe Itumo",
     "role": "Organizing Secretary",
-    "bio": "Dedicated to holistic and exceptional leadership.",
-    "image": "tithe.jpg"
+    "bio": "Dedicated to holistic and exceptional leadership. Tithe organizes activities that promote transformation, purpose-driven growth, and vision-driven action.",
+    "image": "tithe.jpg",
+    "email": "tithe.itumo@dekimu.org",
+    "skills": [
+      "Event Planning",
+      "Organization",
+      "Public Speaking",
+      "Leadership Development"
+    ],
+    "fact": "Advocate for positive change and excellence in all spheres of life."
   }
-  // Add more as needed
 ]
